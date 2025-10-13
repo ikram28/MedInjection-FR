@@ -1,2 +1,2 @@
 # MedInjection-FR
-![My image description](images/my_image.png)
+![My image description](MedInjection-FR-logo.png)

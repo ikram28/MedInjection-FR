@@ -4,7 +4,7 @@ A French biomedical **instruction dataset** and **model suite** for studying how
 
 * **Total size:** 570,154 instruction–response pairs
 * **Components:** Native (77,247) • Synthetic (76,506) • Translated (416,401)
-* **Tasks:** MCQ (single-answer), MCQU (multi-answer), OEQ (open-ended)
+* **Tasks:** MCQU (single-answer), MCQ (multi-answer), OEQ (open-ended)
 
 > This repository hosts documentation, scripts, and links. Data and models are published on the Hugging Face Hub.
 

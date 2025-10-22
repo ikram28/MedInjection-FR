@@ -12,13 +12,13 @@ A French biomedical **instruction dataset** and **model suite** for studying how
 
 ## 🚀 Links
 
-### Datasets (Hugging Face)
+### Datasets 🤗
 
 * **Native:** [https://huggingface.co/datasets/MedInjection-FR/Native](https://huggingface.co/datasets/MedInjection-FR/Native)
 * **Synthetic:** [https://huggingface.co/datasets/MedInjection-FR/Synthetic](https://huggingface.co/datasets/MedInjection-FR/Synthetic)
 * **Translated:** [https://huggingface.co/datasets/MedInjection-FR/Translated](https://huggingface.co/datasets/MedInjection-FR/Translated)
 
-### Models (Hugging Face)
+### Models 🤗
 
 * **QWEN-4B-NAT:** [https://huggingface.co/MedInjection-FR/QWEN-4B-NAT](https://huggingface.co/MedInjection-FR/QWEN-4B-NAT)
 * **QWEN-4B-TRAD:** [https://huggingface.co/MedInjection-FR/QWEN-4B-TRAD](https://huggingface.co/MedInjection-FR/QWEN-4B-TRAD)
@@ -26,7 +26,7 @@ A French biomedical **instruction dataset** and **model suite** for studying how
 * **QWEN-4B-NAT-TRAD:** [https://huggingface.co/MedInjection-FR/QWEN-4B-NAT-TRAD](https://huggingface.co/MedInjection-FR/QWEN-4B-NAT-TRAD)
 * **QWEN-4B-NAT-SYN:** [https://huggingface.co/MedInjection-FR/QWEN-4B-NAT-SYN](https://huggingface.co/MedInjection-FR/QWEN-4B-NAT-SYN)
 * **QWEN-4B-TRAD-SYN:** [https://huggingface.co/MedInjection-FR/QWEN-4B-TRAD-SYN](https://huggingface.co/MedInjection-FR/QWEN-4B-TRAD-SYN)
-* **QWEN-4B-ALL (COMBO):** [https://huggingface.co/MedInjection-FR/QWEN-4B-ALL](https://huggingface.co/MedInjection-FR/QWEN-4B-ALL)
+* **QWEN-4B-ALL:** [https://huggingface.co/MedInjection-FR/QWEN-4B-ALL](https://huggingface.co/MedInjection-FR/QWEN-4B-ALL)
 
 ---
 

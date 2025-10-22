@@ -1,9 +1,4 @@
 # MedInjection-FR
-Here’s a plug-and-play `README.md` for your GitHub repo. It links to the three Hugging Face datasets and the fine-tuned models, and it includes quickstart code, stats, evaluation notes, citation, and license.
-
----
-
-# MedInjection-FR
 
 A French biomedical **instruction dataset** and **model suite** for studying how data provenance (native, synthetic, translated) impacts instruction-tuning of LLMs.
 
@@ -63,24 +58,49 @@ print(ds)
 ### Run a released model (🤗 Transformers)
 
 ```python
-from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_id = "MedInjection-FR/QWEN-4B-NAT-TRAD"
+model_name = "MedInjection-FR/QWEN-4B-NAT-TRAD"
 
-tok = AutoTokenizer.from_pretrained(model_id)
+# load the tokenizer and the model
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(
-    model_id, torch_dtype="auto", device_map="auto"
+    model_name,
+    torch_dtype="auto",
+    device_map="auto"
 )
 
-prompt = (
-    "Question: Quelle est la prise en charge initiale d'un OAP ?\n"
-    "Choix: A) ... B) ... C) ... D) ...\n"
-    "Répondez par la lettre."
+# prepare the model input
+prompt = """Un professionnel de santé de 54 ans consulte un spécialiste des maladies infectieuses pour un suivi concernant un diagnostic récent d'hépatite C chronique. 
+          Il s'est initialement présenté avec des symptômes tels que fatigue, malaise et enzymes hépatiques élevées et soupçonne d'avoir contracté l'infection à la suite
+          d'une piqûre d'aiguille il y a des années. Malgré le début du traitement, son titre viral reste élevé, ce qui incite le médecin à ajouter un nouveau médicament
+          qui inhibe la maturation virale en bloquant la synthèse des protéines. Quel est l'effet indésirable le plus probable de ce médicament ?
+          Choix de réponses : 
+          (A) Uropathie cristalline obstructive 
+          (B) Suppression de la moelle osseuse 
+          (C) Insomnie et irritabilité 
+          (D) ..."""
+messages = [
+    {"role": "user", "content": prompt}
+]
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True,
 )
-inputs = tok(prompt, return_tensors="pt").to(model.device)
-out = model.generate(**inputs, max_new_tokens=8)
-print(tok.decode(out[0], skip_special_tokens=True))
+model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
+
+# conduct text completion
+generated_ids = model.generate(
+    **model_inputs,
+    max_new_tokens=1
+)
+output_ids = generated_ids[0][len(model_inputs.input_ids[0]):].tolist() 
+
+content = tokenizer.decode(output_ids, skip_special_tokens=True)
+
+print("content:", content)
+
 ```
 
 ---
@@ -122,13 +142,7 @@ These scores indicate strong translation fidelity for the translated component.
 If you use MedInjection-FR or the released models, please cite:
 
 ```bibtex
-@inproceedings{medinjection-fr-2025,
-  title     = {MedInjection-FR: Investigating Data Provenance for French Biomedical Instruction Tuning},
-  author    = {Your Name and Coauthors},
-  booktitle = {Proceedings of ...},
-  year      = {2025},
-  note      = {Datasets and models on the Hugging Face Hub}
-}
+
 ```
 
 ---
@@ -140,21 +154,9 @@ Questions or feedback?
 * Open an issue in this GitHub repo
 * Or email: [you@example.com](mailto:you@example.com)
 
----
 
-## 🗺️ Repository structure (suggested)
 
-```
-.
-├── data_cards/           # component-specific datasheets
-├── scripts/              # preprocessing / evaluation helpers
-├── configs/              # training configs (DoRA/LoRA etc.)
-├── results/              # tables, plots, logs
-├── LICENSE
-└── README.md
-```
 
----
 
-If you share the exact HF org/user handle and final model IDs, I can tailor the links and the BibTeX entry precisely.
+
 

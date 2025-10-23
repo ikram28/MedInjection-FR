@@ -2,8 +2,8 @@
 
 A French biomedical **instruction dataset** and **model suite** for studying how data provenance (native, synthetic, translated) impacts instruction-tuning of LLMs.
 
-* **Total size:** 570,154 instruction–response pairs
-* **Components:** Native (77,247) • Synthetic (76,506) • Translated (416,401)
+* **Total size:** 571,436 instruction–response pairs
+* **Components:** Native (77,247) • Synthetic (76,506) • Translated (417,674)
 * **Tasks:** MCQU (single-answer), MCQ (multi-answer), OEQ (open-ended)
 
 > This repository hosts documentation, scripts, and links. Data and models are published on the Hugging Face Hub.
@@ -36,8 +36,8 @@ A French biomedical **instruction dataset** and **model suite** for studying how
 | ---------- | ------: | -----: | -----: | ----------: |
 | Native     |  57,563 |  5,055 | 14,629 |      77,247 |
 | Synthetic  |  76,506 |      – |      – |      76,506 |
-| Translated | 366,370 | 38,011 | 12,020 |     416,401 |
-| **Total**  | 500,439 | 43,066 | 26,649 | **570,154** |
+| Translated | 366,370 | 38,011 | 13,293 |     416,401 |
+| **Total**  | 500,439 | 43,066 | 27,931 | **571,436** |
 
 Task mix (all components): **OEQ 63,267**, **MCQ 59,597**, **MCQU 454,713**.
 

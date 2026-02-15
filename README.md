@@ -152,7 +152,7 @@ If you use MedInjection-FR or the released models, please cite:
 Questions or feedback?
 
 * Open an issue in this GitHub repo
-* Or email: [you@example.com](mailto:you@example.com)
+* Or email: [ikram.belmadani@lis-lab.fr](mailto:ikram.belmadani@lis-lab.fr)
 
 
 

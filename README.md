@@ -142,7 +142,15 @@ These scores indicate strong translation fidelity for the translated component.
 If you use MedInjection-FR or the released models, please cite:
 
 ```bibtex
-
+@misc{belmadani2026medinjectionfrexploringrolenative,
+      title={MedInjection-FR: Exploring the Role of Native, Synthetic, and Translated Data in Biomedical Instruction Tuning}, 
+      author={Ikram Belmadani and Oumaima El Khettari and Pacôme Constant dit Beaufils and Benoit Favre and Richard Dufour},
+      year={2026},
+      eprint={2603.06905},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2603.06905}, 
+}
 ```
 
 ---

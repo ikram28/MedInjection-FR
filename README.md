@@ -1,5 +1,7 @@
 # MedInjection-FR
 
+## Paper : [Here](https://arxiv.org/abs/2603.06905)
+
 A French biomedical **instruction dataset** and **model suite** for studying how data provenance (native, synthetic, translated) impacts instruction-tuning of LLMs.
 
 * **Total size:** 571,436 instruction–response pairs
